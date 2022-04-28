@@ -1,0 +1,3934 @@
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # google_compute_security_policy.policy["gw-dev-adeo-no"] will be updated in-place
+  ~ resource "google_compute_security_policy" "policy" {
+        fingerprint = "KEkB0udc7jc="
+        id          = "projects/nais-dev-2e7b/global/securityPolicies/gw-dev-adeo-no"
+        name        = "gw-dev-adeo-no"
+        project     = "nais-dev-2e7b"
+        self_link   = "https://www.googleapis.com/compute/v1/projects/nais-dev-2e7b/global/securityPolicies/gw-dev-adeo-no"
+
+      - rule {
+          - action      = "allow" -> null
+          - description = "Floating IP - ekstern LB bigip apim quickfix" -> null
+          - preview     = false -> null
+          - priority    = 1004 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.51.140/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "Floating IP - ekstern LB bigip apim quickfix"
+          + preview     = false
+          + priority    = 1004
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.51.140/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "Interface IP - ekstern LB SO8 bigip apim quickfix" -> null
+          - preview     = false -> null
+          - priority    = 1005 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.51.141/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "Interface IP - ekstern LB SO8 bigip apim quickfix"
+          + preview     = false
+          + priority    = 1005
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.51.141/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "Interface IP - ekstern LB U89 bigip apim quickfix" -> null
+          - preview     = false -> null
+          - priority    = 1006 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.51.142/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "Interface IP - ekstern LB U89 bigip apim quickfix"
+          + preview     = false
+          + priority    = 1006
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.51.142/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow naisdevice" -> null
+          - preview     = false -> null
+          - priority    = 1007 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '35.228.13.74/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow naisdevice"
+          + preview     = false
+          + priority    = 1007
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '35.228.13.74/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "aura" -> null
+          - preview     = false -> null
+          - priority    = 1000 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.210/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "aura"
+          + preview     = false
+          + priority    = 1000
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.210/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "citrix" -> null
+          - preview     = false -> null
+          - priority    = 1003 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.218/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "citrix"
+          + preview     = false
+          + priority    = 1003
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.218/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "grafana" -> null
+          - preview     = false -> null
+          - priority    = 1001 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.211/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "grafana"
+          + preview     = false
+          + priority    = 1001
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.211/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "nais dev-fss" -> null
+          - preview     = false -> null
+          - priority    = 1002 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.214/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "nais dev-fss"
+          + preview     = false
+          + priority    = 1002
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.214/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "deny matches for evaluatePreconfiguredExpr('cve-canary'), sensitivity level 1" -> null
+          - preview     = false -> null
+          - priority    = 200 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('cve-canary', ['owasp-crs-v030001-id244228-cve'])" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('lfi-stable')" -> null
+          - preview     = true -> null
+          - priority    = 102 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('lfi-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('methodenforcement-canary')" -> null
+          - preview     = true -> null
+          - priority    = 105 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('methodenforcement-canary')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('php-stable')" -> null
+          - preview     = true -> null
+          - priority    = 108 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('php-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('protocolattack-stable')" -> null
+          - preview     = true -> null
+          - priority    = 107 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('protocolattack-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('rce-stable')" -> null
+          - preview     = true -> null
+          - priority    = 104 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('rce-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('rfi-stable')" -> null
+          - preview     = true -> null
+          - priority    = 103 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('rfi-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('scannerdetection-stable')" -> null
+          - preview     = true -> null
+          - priority    = 106 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('scannerdetection-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('sqli-stable')" -> null
+          - preview     = true -> null
+          - priority    = 100 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('sqli-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('xss-stable')" -> null
+          - preview     = true -> null
+          - priority    = 101 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('xss-stable')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('cve-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 110
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('cve-canary', '[owasp-crs-v030001-id244228-cve, owasp-crs-v030001-id344228-cve]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('lfi-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 104
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('lfi-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('methodenforcement-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 106
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('methodenforcement-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('php-stable'), level description: '1 with L2 owasp-crs-v030001-id933151-php'"
+          + preview     = false
+          + priority    = 111
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('php-stable', '[owasp-crs-v030001-id933131-php, owasp-crs-v030001-id933161-php, owasp-crs-v030001-id933111-php]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('protocolattack-stable'), level description: '1 with L2 owasp-crs-v030001-id921170'"
+          + preview     = false
+          + priority    = 108
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('protocolattack-stable', '[owasp-crs-v030001-id921170-protocolattack]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('rce-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 105
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('rce-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('rfi-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 103
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('rfi-stable', '[owasp-crs-v030001-id931130-rfi]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('scannerdetection-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 107
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('scannerdetection-stable', '[owasp-crs-v030001-id913101-scannerdetection, owasp-crs-v030001-id913102-scannerdetection]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('sessionfixation-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 109
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('sessionfixation-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('sqli-stable'), level description: '1: with some adjustments according to services blocked and scanning of vulnerability'"
+          + preview     = false
+          + priority    = 100
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('sqli-stable', '[owasp-crs-v030001-id942120-sqli, owasp-crs-v030001-id942150-sqli, owasp-crs-v030001-id942180-sqli, owasp-crs-v030001-id942200-sqli, owasp-crs-v030001-id942210-sqli, owasp-crs-v030001-id942260-sqli, owasp-crs-v030001-id942300-sqli, owasp-crs-v030001-id942330-sqli, owasp-crs-v030001-id942340-sqli, owasp-crs-v030001-id942390-sqli, owasp-crs-v030001-id942410-sqli, owasp-crs-v030001-id942430-sqli, owasp-crs-v030001-id942450-sqli, owasp-crs-v030001-id942251-sqli, owasp-crs-v030001-id942420-sqli, owasp-crs-v030001-id942431-sqli, owasp-crs-v030001-id942460-sqli, owasp-crs-v030001-id942421-sqli, owasp-crs-v030001-id942432-sqli, owasp-crs-v030001-id942220-sqli, owasp-crs-v030001-id942160-sqli, owasp-crs-v030001-id942140-sqli, owasp-crs-v030001-id942190-sqli]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('xss-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 101
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('xss-stable', '[owasp-crs-v030001-id941150-xss, owasp-crs-v030001-id941320-xss, owasp-crs-v030001-id941330-xss, owasp-crs-v030001-id941340-xss]')"
+                }
+            }
+        }
+        rule {
+            action      = "deny(404)"
+            description = "default rule"
+            preview     = false
+            priority    = 2147483647
+
+            match {
+                versioned_expr = "SRC_IPS_V1"
+
+                config {
+                    src_ip_ranges = [
+                        "*",
+                    ]
+                }
+            }
+        }
+    }
+
+  # google_compute_security_policy.policy["gw-dev-gcp-nais-io"] will be updated in-place
+  ~ resource "google_compute_security_policy" "policy" {
+        fingerprint = "_VG0NTFjFxM="
+        id          = "projects/nais-dev-2e7b/global/securityPolicies/gw-dev-gcp-nais-io"
+        name        = "gw-dev-gcp-nais-io"
+        project     = "nais-dev-2e7b"
+        self_link   = "https://www.googleapis.com/compute/v1/projects/nais-dev-2e7b/global/securityPolicies/gw-dev-gcp-nais-io"
+
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow naisdevice" -> null
+          - preview     = false -> null
+          - priority    = 1011 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '35.228.13.74/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow naisdevice"
+          + preview     = false
+          + priority    = 1011
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '35.228.13.74/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "aura" -> null
+          - preview     = false -> null
+          - priority    = 1000 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.210/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "aura"
+          + preview     = false
+          + priority    = 1000
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.210/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "checkpoint-prod-1" -> null
+          - preview     = false -> null
+          - priority    = 1006 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '35.228.61.157/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "checkpoint-prod-1"
+          + preview     = false
+          + priority    = 1006
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '35.228.61.157/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "checkpoint-prod-2" -> null
+          - preview     = false -> null
+          - priority    = 1007 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '35.228.76.138/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "checkpoint-prod-2"
+          + preview     = false
+          + priority    = 1007
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '35.228.76.138/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "gcp-runner" -> null
+          - preview     = false -> null
+          - priority    = 1010 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '35.228.111.9/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "gcp-runner"
+          + preview     = false
+          + priority    = 1010
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '35.228.111.9/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "github-runner" -> null
+          - preview     = false -> null
+          - priority    = 1009 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '35.228.74.128/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "github-runner"
+          + preview     = false
+          + priority    = 1009
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '35.228.74.128/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "grafana" -> null
+          - preview     = false -> null
+          - priority    = 1001 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.211/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "grafana"
+          + preview     = false
+          + priority    = 1001
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.211/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "labs-gcp cloud nat" -> null
+          - preview     = false -> null
+          - priority    = 1008 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '35.228.140.33/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "labs-gcp cloud nat"
+          + preview     = false
+          + priority    = 1008
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '35.228.140.33/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "nais dev-fss" -> null
+          - preview     = false -> null
+          - priority    = 1004 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.214/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "nais dev-fss"
+          + preview     = false
+          + priority    = 1004
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.214/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "nais dev-sbs" -> null
+          - preview     = false -> null
+          - priority    = 1005 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.216/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "nais dev-sbs"
+          + preview     = false
+          + priority    = 1005
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.216/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "vdi driftsimage" -> null
+          - preview     = false -> null
+          - priority    = 1002 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.212/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "vdi driftsimage"
+          + preview     = false
+          + priority    = 1002
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.212/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "vdi utviklerimage" -> null
+          - preview     = false -> null
+          - priority    = 1003 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.213/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "vdi utviklerimage"
+          + preview     = false
+          + priority    = 1003
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.213/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "deny matches for evaluatePreconfiguredExpr('cve-canary'), sensitivity level 1" -> null
+          - preview     = false -> null
+          - priority    = 200 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('cve-canary', ['owasp-crs-v030001-id244228-cve'])" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('lfi-stable')" -> null
+          - preview     = true -> null
+          - priority    = 102 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('lfi-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('methodenforcement-canary')" -> null
+          - preview     = true -> null
+          - priority    = 105 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('methodenforcement-canary')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('php-stable')" -> null
+          - preview     = true -> null
+          - priority    = 108 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('php-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('protocolattack-stable')" -> null
+          - preview     = true -> null
+          - priority    = 107 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('protocolattack-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('rce-stable')" -> null
+          - preview     = true -> null
+          - priority    = 104 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('rce-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('rfi-stable')" -> null
+          - preview     = true -> null
+          - priority    = 103 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('rfi-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('scannerdetection-stable')" -> null
+          - preview     = true -> null
+          - priority    = 106 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('scannerdetection-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('sqli-stable')" -> null
+          - preview     = true -> null
+          - priority    = 100 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('sqli-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('xss-stable')" -> null
+          - preview     = true -> null
+          - priority    = 101 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('xss-stable')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('cve-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 110
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('cve-canary', '[owasp-crs-v030001-id244228-cve, owasp-crs-v030001-id344228-cve]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('lfi-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 104
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('lfi-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('methodenforcement-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 106
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('methodenforcement-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('php-stable'), level description: '1 with L2 owasp-crs-v030001-id933151-php'"
+          + preview     = false
+          + priority    = 111
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('php-stable', '[owasp-crs-v030001-id933131-php, owasp-crs-v030001-id933161-php, owasp-crs-v030001-id933111-php]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('protocolattack-stable'), level description: '1 with L2 owasp-crs-v030001-id921170'"
+          + preview     = false
+          + priority    = 108
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('protocolattack-stable', '[owasp-crs-v030001-id921170-protocolattack]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('rce-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 105
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('rce-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('rfi-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 103
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('rfi-stable', '[owasp-crs-v030001-id931130-rfi]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('scannerdetection-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 107
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('scannerdetection-stable', '[owasp-crs-v030001-id913101-scannerdetection, owasp-crs-v030001-id913102-scannerdetection]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('sessionfixation-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 109
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('sessionfixation-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('sqli-stable'), level description: '1: with some adjustments according to services blocked and scanning of vulnerability'"
+          + preview     = false
+          + priority    = 100
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('sqli-stable', '[owasp-crs-v030001-id942120-sqli, owasp-crs-v030001-id942150-sqli, owasp-crs-v030001-id942180-sqli, owasp-crs-v030001-id942200-sqli, owasp-crs-v030001-id942210-sqli, owasp-crs-v030001-id942260-sqli, owasp-crs-v030001-id942300-sqli, owasp-crs-v030001-id942330-sqli, owasp-crs-v030001-id942340-sqli, owasp-crs-v030001-id942390-sqli, owasp-crs-v030001-id942410-sqli, owasp-crs-v030001-id942430-sqli, owasp-crs-v030001-id942450-sqli, owasp-crs-v030001-id942251-sqli, owasp-crs-v030001-id942420-sqli, owasp-crs-v030001-id942431-sqli, owasp-crs-v030001-id942460-sqli, owasp-crs-v030001-id942421-sqli, owasp-crs-v030001-id942432-sqli, owasp-crs-v030001-id942220-sqli, owasp-crs-v030001-id942160-sqli, owasp-crs-v030001-id942140-sqli, owasp-crs-v030001-id942190-sqli]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('xss-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 101
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('xss-stable', '[owasp-crs-v030001-id941150-xss, owasp-crs-v030001-id941320-xss, owasp-crs-v030001-id941330-xss, owasp-crs-v030001-id941340-xss]')"
+                }
+            }
+        }
+        rule {
+            action      = "deny(404)"
+            description = "default rule"
+            preview     = false
+            priority    = 2147483647
+
+            match {
+                versioned_expr = "SRC_IPS_V1"
+
+                config {
+                    src_ip_ranges = [
+                        "*",
+                    ]
+                }
+            }
+        }
+    }
+
+  # google_compute_security_policy.policy["gw-dev-helserefusjon-no"] will be updated in-place
+  ~ resource "google_compute_security_policy" "policy" {
+        fingerprint = "6qH__yGwdwI="
+        id          = "projects/nais-dev-2e7b/global/securityPolicies/gw-dev-helserefusjon-no"
+        name        = "gw-dev-helserefusjon-no"
+        project     = "nais-dev-2e7b"
+        self_link   = "https://www.googleapis.com/compute/v1/projects/nais-dev-2e7b/global/securityPolicies/gw-dev-helserefusjon-no"
+
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow checkpoint" -> null
+          - preview     = false -> null
+          - priority    = 1000 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '35.228.61.157/32') || inIpRange(origin.ip, '35.228.76.138/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow checkpoint"
+          + preview     = false
+          + priority    = 1000
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '35.228.61.157/32') || inIpRange(origin.ip, '35.228.76.138/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow naisdevice" -> null
+          - preview     = false -> null
+          - priority    = 1001 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '35.228.13.74/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow naisdevice"
+          + preview     = false
+          + priority    = 1001
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '35.228.13.74/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "deny matches for evaluatePreconfiguredExpr('cve-canary'), sensitivity level 1" -> null
+          - preview     = false -> null
+          - priority    = 200 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('cve-canary', ['owasp-crs-v030001-id244228-cve'])" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('lfi-stable')" -> null
+          - preview     = true -> null
+          - priority    = 102 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('lfi-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('methodenforcement-canary')" -> null
+          - preview     = true -> null
+          - priority    = 105 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('methodenforcement-canary')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('php-stable')" -> null
+          - preview     = true -> null
+          - priority    = 108 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('php-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('protocolattack-stable')" -> null
+          - preview     = true -> null
+          - priority    = 107 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('protocolattack-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('rce-stable')" -> null
+          - preview     = true -> null
+          - priority    = 104 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('rce-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('rfi-stable')" -> null
+          - preview     = true -> null
+          - priority    = 103 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('rfi-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('scannerdetection-stable')" -> null
+          - preview     = true -> null
+          - priority    = 106 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('scannerdetection-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('sqli-stable')" -> null
+          - preview     = true -> null
+          - priority    = 100 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('sqli-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('xss-stable')" -> null
+          - preview     = true -> null
+          - priority    = 101 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('xss-stable')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('cve-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 110
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('cve-canary', '[owasp-crs-v030001-id244228-cve, owasp-crs-v030001-id344228-cve]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('lfi-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 104
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('lfi-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('methodenforcement-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 106
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('methodenforcement-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('php-stable'), level description: '1 with L2 owasp-crs-v030001-id933151-php'"
+          + preview     = false
+          + priority    = 111
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('php-stable', '[owasp-crs-v030001-id933131-php, owasp-crs-v030001-id933161-php, owasp-crs-v030001-id933111-php]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('protocolattack-stable'), level description: '1 with L2 owasp-crs-v030001-id921170'"
+          + preview     = false
+          + priority    = 108
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('protocolattack-stable', '[owasp-crs-v030001-id921170-protocolattack]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('rce-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 105
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('rce-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('rfi-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 103
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('rfi-stable', '[owasp-crs-v030001-id931130-rfi]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('scannerdetection-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 107
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('scannerdetection-stable', '[owasp-crs-v030001-id913101-scannerdetection, owasp-crs-v030001-id913102-scannerdetection]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('sessionfixation-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 109
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('sessionfixation-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('sqli-stable'), level description: '1: with some adjustments according to services blocked and scanning of vulnerability'"
+          + preview     = false
+          + priority    = 100
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('sqli-stable', '[owasp-crs-v030001-id942120-sqli, owasp-crs-v030001-id942150-sqli, owasp-crs-v030001-id942180-sqli, owasp-crs-v030001-id942200-sqli, owasp-crs-v030001-id942210-sqli, owasp-crs-v030001-id942260-sqli, owasp-crs-v030001-id942300-sqli, owasp-crs-v030001-id942330-sqli, owasp-crs-v030001-id942340-sqli, owasp-crs-v030001-id942390-sqli, owasp-crs-v030001-id942410-sqli, owasp-crs-v030001-id942430-sqli, owasp-crs-v030001-id942450-sqli, owasp-crs-v030001-id942251-sqli, owasp-crs-v030001-id942420-sqli, owasp-crs-v030001-id942431-sqli, owasp-crs-v030001-id942460-sqli, owasp-crs-v030001-id942421-sqli, owasp-crs-v030001-id942432-sqli, owasp-crs-v030001-id942220-sqli, owasp-crs-v030001-id942160-sqli, owasp-crs-v030001-id942140-sqli, owasp-crs-v030001-id942190-sqli]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('xss-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 101
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('xss-stable', '[owasp-crs-v030001-id941150-xss, owasp-crs-v030001-id941320-xss, owasp-crs-v030001-id941330-xss, owasp-crs-v030001-id941340-xss]')"
+                }
+            }
+        }
+        rule {
+            action      = "deny(404)"
+            description = "default rule"
+            preview     = false
+            priority    = 2147483647
+
+            match {
+                versioned_expr = "SRC_IPS_V1"
+
+                config {
+                    src_ip_ranges = [
+                        "*",
+                    ]
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(404)" -> null
+          - description = "deny requests for application URIs for internal use" -> null
+          - preview     = false -> null
+          - priority    = 900 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.path.contains('/internal') || request.path.contains('/actuator') || request.path.contains('/metrics')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(404)"
+          + description = "deny requests for application URIs for internal use"
+          + preview     = false
+          + priority    = 900
+
+          + match {
+
+              + expr {
+                  + expression = "request.path.contains('/internal') || request.path.contains('/actuator') || request.path.contains('/metrics')"
+                }
+            }
+        }
+    }
+
+  # google_compute_security_policy.policy["gw-dev-intern-nav-no"] will be updated in-place
+  ~ resource "google_compute_security_policy" "policy" {
+        fingerprint = "qObQkuSA_eQ="
+        id          = "projects/nais-dev-2e7b/global/securityPolicies/gw-dev-intern-nav-no"
+        name        = "gw-dev-intern-nav-no"
+        project     = "nais-dev-2e7b"
+        self_link   = "https://www.googleapis.com/compute/v1/projects/nais-dev-2e7b/global/securityPolicies/gw-dev-intern-nav-no"
+
+      - rule {
+          - action      = "allow" -> null
+          - description = "OeBS" -> null
+          - preview     = false -> null
+          - priority    = 1006 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.220/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "OeBS"
+          + preview     = false
+          + priority    = 1006
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.220/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow azure-login-proxies" -> null
+          - preview     = false -> null
+          - priority    = 1010 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '34.88.186.209/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow azure-login-proxies"
+          + preview     = false
+          + priority    = 1010
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '34.88.186.209/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow naisdevice" -> null
+          - preview     = false -> null
+          - priority    = 1007 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '35.228.13.74/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow naisdevice"
+          + preview     = false
+          + priority    = 1007
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '35.228.13.74/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "aura" -> null
+          - preview     = false -> null
+          - priority    = 1000 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.210/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "aura"
+          + preview     = false
+          + priority    = 1000
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.210/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "checkpoint-prod-1" -> null
+          - preview     = false -> null
+          - priority    = 1008 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '35.228.61.157/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "checkpoint-prod-1"
+          + preview     = false
+          + priority    = 1008
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '35.228.61.157/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "checkpoint-prod-2" -> null
+          - preview     = false -> null
+          - priority    = 1009 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '35.228.76.138/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "checkpoint-prod-2"
+          + preview     = false
+          + priority    = 1009
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '35.228.76.138/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "citrix" -> null
+          - preview     = false -> null
+          - priority    = 1005 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.218/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "citrix"
+          + preview     = false
+          + priority    = 1005
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.218/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "grafana" -> null
+          - preview     = false -> null
+          - priority    = 1001 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.211/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "grafana"
+          + preview     = false
+          + priority    = 1001
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.211/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "nais dev-fss" -> null
+          - preview     = false -> null
+          - priority    = 1004 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.214/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "nais dev-fss"
+          + preview     = false
+          + priority    = 1004
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.214/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "vdi driftsimage" -> null
+          - preview     = false -> null
+          - priority    = 1002 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.212/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "vdi driftsimage"
+          + preview     = false
+          + priority    = 1002
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.212/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "vdi utviklerimage" -> null
+          - preview     = false -> null
+          - priority    = 1003 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.213/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "vdi utviklerimage"
+          + preview     = false
+          + priority    = 1003
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.213/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "deny matches for evaluatePreconfiguredExpr('cve-canary'), sensitivity level 1" -> null
+          - preview     = false -> null
+          - priority    = 200 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('cve-canary', ['owasp-crs-v030001-id244228-cve'])" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('lfi-stable')" -> null
+          - preview     = true -> null
+          - priority    = 102 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('lfi-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('methodenforcement-canary')" -> null
+          - preview     = true -> null
+          - priority    = 105 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('methodenforcement-canary')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('php-stable')" -> null
+          - preview     = true -> null
+          - priority    = 108 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('php-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('protocolattack-stable')" -> null
+          - preview     = true -> null
+          - priority    = 107 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('protocolattack-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('rce-stable')" -> null
+          - preview     = true -> null
+          - priority    = 104 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('rce-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('rfi-stable')" -> null
+          - preview     = true -> null
+          - priority    = 103 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('rfi-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('scannerdetection-stable')" -> null
+          - preview     = true -> null
+          - priority    = 106 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('scannerdetection-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('sqli-stable')" -> null
+          - preview     = true -> null
+          - priority    = 100 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('sqli-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('xss-stable')" -> null
+          - preview     = true -> null
+          - priority    = 101 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('xss-stable')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('cve-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 110
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('cve-canary', '[owasp-crs-v030001-id244228-cve, owasp-crs-v030001-id344228-cve]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('lfi-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 104
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('lfi-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('methodenforcement-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 106
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('methodenforcement-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('php-stable'), level description: '1 with L2 owasp-crs-v030001-id933151-php'"
+          + preview     = false
+          + priority    = 111
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('php-stable', '[owasp-crs-v030001-id933131-php, owasp-crs-v030001-id933161-php, owasp-crs-v030001-id933111-php]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('protocolattack-stable'), level description: '1 with L2 owasp-crs-v030001-id921170'"
+          + preview     = false
+          + priority    = 108
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('protocolattack-stable', '[owasp-crs-v030001-id921170-protocolattack]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('rce-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 105
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('rce-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('rfi-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 103
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('rfi-stable', '[owasp-crs-v030001-id931130-rfi]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('scannerdetection-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 107
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('scannerdetection-stable', '[owasp-crs-v030001-id913101-scannerdetection, owasp-crs-v030001-id913102-scannerdetection]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('sessionfixation-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 109
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('sessionfixation-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('sqli-stable'), level description: '1: with some adjustments according to services blocked and scanning of vulnerability'"
+          + preview     = false
+          + priority    = 100
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('sqli-stable', '[owasp-crs-v030001-id942120-sqli, owasp-crs-v030001-id942150-sqli, owasp-crs-v030001-id942180-sqli, owasp-crs-v030001-id942200-sqli, owasp-crs-v030001-id942210-sqli, owasp-crs-v030001-id942260-sqli, owasp-crs-v030001-id942300-sqli, owasp-crs-v030001-id942330-sqli, owasp-crs-v030001-id942340-sqli, owasp-crs-v030001-id942390-sqli, owasp-crs-v030001-id942410-sqli, owasp-crs-v030001-id942430-sqli, owasp-crs-v030001-id942450-sqli, owasp-crs-v030001-id942251-sqli, owasp-crs-v030001-id942420-sqli, owasp-crs-v030001-id942431-sqli, owasp-crs-v030001-id942460-sqli, owasp-crs-v030001-id942421-sqli, owasp-crs-v030001-id942432-sqli, owasp-crs-v030001-id942220-sqli, owasp-crs-v030001-id942160-sqli, owasp-crs-v030001-id942140-sqli, owasp-crs-v030001-id942190-sqli]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('xss-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 101
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('xss-stable', '[owasp-crs-v030001-id941150-xss, owasp-crs-v030001-id941320-xss, owasp-crs-v030001-id941330-xss, owasp-crs-v030001-id941340-xss]')"
+                }
+            }
+        }
+        rule {
+            action      = "deny(404)"
+            description = "default rule"
+            preview     = false
+            priority    = 2147483647
+
+            match {
+                versioned_expr = "SRC_IPS_V1"
+
+                config {
+                    src_ip_ranges = [
+                        "*",
+                    ]
+                }
+            }
+        }
+    }
+
+  # google_compute_security_policy.policy["gw-dev-nav-no"] will be updated in-place
+  ~ resource "google_compute_security_policy" "policy" {
+        fingerprint = "2AEpLOXg0Ww="
+        id          = "projects/nais-dev-2e7b/global/securityPolicies/gw-dev-nav-no"
+        name        = "gw-dev-nav-no"
+        project     = "nais-dev-2e7b"
+        self_link   = "https://www.googleapis.com/compute/v1/projects/nais-dev-2e7b/global/securityPolicies/gw-dev-nav-no"
+
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow checkpoint to access testapp-a.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1007 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'testapp-a.dev.nav.no' && (inIpRange(origin.ip, '35.228.61.157/32') || inIpRange(origin.ip, '35.228.76.138/32'))" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow checkpoint to access testapp-a.dev.nav.no"
+          + preview     = false
+          + priority    = 1007
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'testapp-a.dev.nav.no' && (inIpRange(origin.ip, '35.228.61.157/32') || inIpRange(origin.ip, '35.228.76.138/32'))"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow checkpoint-prod-1" -> null
+          - preview     = false -> null
+          - priority    = 1008 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '35.228.61.157/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow checkpoint-prod-1"
+          + preview     = false
+          + priority    = 1008
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '35.228.61.157/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow checkpoint-prod-2" -> null
+          - preview     = false -> null
+          - priority    = 1009 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '35.228.76.138/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow checkpoint-prod-2"
+          + preview     = false
+          + priority    = 1009
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '35.228.76.138/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow naisdevice" -> null
+          - preview     = false -> null
+          - priority    = 1006 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '35.228.13.74/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow naisdevice"
+          + preview     = false
+          + priority    = 1006
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '35.228.13.74/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow nav wifi" -> null
+          - preview     = false -> null
+          - priority    = 1010 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.51.180/30') || inIpRange(origin.ip, '155.55.51.184/30') || inIpRange(origin.ip, '155.55.51.188/31')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow nav wifi"
+          + preview     = false
+          + priority    = 1010
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.51.180/30') || inIpRange(origin.ip, '155.55.51.184/30') || inIpRange(origin.ip, '155.55.51.188/31')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "aura" -> null
+          - preview     = false -> null
+          - priority    = 1000 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.210/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "aura"
+          + preview     = false
+          + priority    = 1000
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.210/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "citrix" -> null
+          - preview     = false -> null
+          - priority    = 1005 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.218/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "citrix"
+          + preview     = false
+          + priority    = 1005
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.218/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "grafana" -> null
+          - preview     = false -> null
+          - priority    = 1001 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.211/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "grafana"
+          + preview     = false
+          + priority    = 1001
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.211/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "nais dev-fss" -> null
+          - preview     = false -> null
+          - priority    = 1011 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.214/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "nais dev-fss"
+          + preview     = false
+          + priority    = 1011
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.214/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "nais dev-sbs" -> null
+          - preview     = false -> null
+          - priority    = 1004 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.216/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "nais dev-sbs"
+          + preview     = false
+          + priority    = 1004
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.216/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "vdi driftsimage" -> null
+          - preview     = false -> null
+          - priority    = 1002 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.212/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "vdi driftsimage"
+          + preview     = false
+          + priority    = 1002
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.212/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "vdi utviklerimage" -> null
+          - preview     = false -> null
+          - priority    = 1003 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '155.55.50.213/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "vdi utviklerimage"
+          + preview     = false
+          + priority    = 1003
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '155.55.50.213/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "deny matches for evaluatePreconfiguredExpr('cve-canary'), sensitivity level 1" -> null
+          - preview     = false -> null
+          - priority    = 200 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('cve-canary', ['owasp-crs-v030001-id244228-cve'])" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('lfi-stable')" -> null
+          - preview     = true -> null
+          - priority    = 102 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('lfi-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('methodenforcement-canary')" -> null
+          - preview     = true -> null
+          - priority    = 105 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('methodenforcement-canary')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('php-stable')" -> null
+          - preview     = true -> null
+          - priority    = 108 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('php-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('protocolattack-stable')" -> null
+          - preview     = true -> null
+          - priority    = 107 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('protocolattack-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('rce-stable')" -> null
+          - preview     = true -> null
+          - priority    = 104 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('rce-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('rfi-stable')" -> null
+          - preview     = true -> null
+          - priority    = 103 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('rfi-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('scannerdetection-stable')" -> null
+          - preview     = true -> null
+          - priority    = 106 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('scannerdetection-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('sqli-stable')" -> null
+          - preview     = true -> null
+          - priority    = 100 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('sqli-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('xss-stable')" -> null
+          - preview     = true -> null
+          - priority    = 101 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('xss-stable')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('cve-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 110
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('cve-canary', '[owasp-crs-v030001-id244228-cve, owasp-crs-v030001-id344228-cve]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('lfi-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 104
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('lfi-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('methodenforcement-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 106
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('methodenforcement-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('php-stable'), level description: '1 with L2 owasp-crs-v030001-id933151-php'"
+          + preview     = false
+          + priority    = 111
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('php-stable', '[owasp-crs-v030001-id933131-php, owasp-crs-v030001-id933161-php, owasp-crs-v030001-id933111-php]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('protocolattack-stable'), level description: '1 with L2 owasp-crs-v030001-id921170'"
+          + preview     = false
+          + priority    = 108
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('protocolattack-stable', '[owasp-crs-v030001-id921170-protocolattack]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('rce-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 105
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('rce-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('rfi-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 103
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('rfi-stable', '[owasp-crs-v030001-id931130-rfi]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('scannerdetection-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 107
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('scannerdetection-stable', '[owasp-crs-v030001-id913101-scannerdetection, owasp-crs-v030001-id913102-scannerdetection]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('sessionfixation-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 109
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('sessionfixation-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('sqli-stable'), level description: '1: with some adjustments according to services blocked and scanning of vulnerability'"
+          + preview     = false
+          + priority    = 100
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('sqli-stable', '[owasp-crs-v030001-id942120-sqli, owasp-crs-v030001-id942150-sqli, owasp-crs-v030001-id942180-sqli, owasp-crs-v030001-id942200-sqli, owasp-crs-v030001-id942210-sqli, owasp-crs-v030001-id942260-sqli, owasp-crs-v030001-id942300-sqli, owasp-crs-v030001-id942330-sqli, owasp-crs-v030001-id942340-sqli, owasp-crs-v030001-id942390-sqli, owasp-crs-v030001-id942410-sqli, owasp-crs-v030001-id942430-sqli, owasp-crs-v030001-id942450-sqli, owasp-crs-v030001-id942251-sqli, owasp-crs-v030001-id942420-sqli, owasp-crs-v030001-id942431-sqli, owasp-crs-v030001-id942460-sqli, owasp-crs-v030001-id942421-sqli, owasp-crs-v030001-id942432-sqli, owasp-crs-v030001-id942220-sqli, owasp-crs-v030001-id942160-sqli, owasp-crs-v030001-id942140-sqli, owasp-crs-v030001-id942190-sqli]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('xss-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 101
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('xss-stable', '[owasp-crs-v030001-id941150-xss, owasp-crs-v030001-id941320-xss, owasp-crs-v030001-id941330-xss, owasp-crs-v030001-id941340-xss]')"
+                }
+            }
+        }
+        rule {
+            action      = "deny(404)"
+            description = "default rule"
+            preview     = false
+            priority    = 2147483647
+
+            match {
+                versioned_expr = "SRC_IPS_V1"
+
+                config {
+                    src_ip_ranges = [
+                        "*",
+                    ]
+                }
+            }
+        }
+    }
+
+  # google_compute_security_policy.policy["gw-ekstern-dev-nav-no"] will be updated in-place
+  ~ resource "google_compute_security_policy" "policy" {
+        fingerprint = "HmfFnkl9XRs="
+        id          = "projects/nais-dev-2e7b/global/securityPolicies/gw-ekstern-dev-nav-no"
+        name        = "gw-ekstern-dev-nav-no"
+        project     = "nais-dev-2e7b"
+        self_link   = "https://www.googleapis.com/compute/v1/projects/nais-dev-2e7b/global/securityPolicies/gw-ekstern-dev-nav-no"
+
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to aareg-dist-online.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1030 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'aareg-dist-online.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to aareg-dist-online.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1030
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'aareg-dist-online.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to aareg-dist-tilgang-q2.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1016 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'aareg-dist-tilgang-q2.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to aareg-dist-tilgang-q2.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1016
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'aareg-dist-tilgang-q2.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to ag-notifikasjoner.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1003 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'ag-notifikasjoner.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to ag-notifikasjoner.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1003
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'ag-notifikasjoner.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to arbeidsplassen-api.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1006 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'arbeidsplassen-api.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to arbeidsplassen-api.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1006
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'arbeidsplassen-api.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to behandler.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1010 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'behandler.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to behandler.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1010
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'behandler.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to bidrag-aktoerregister.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1017 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'bidrag-aktoerregister.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to bidrag-aktoerregister.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1017
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'bidrag-aktoerregister.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to bidrag-cucumber-cloud-feature.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1008 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'bidrag-cucumber-cloud-feature.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to bidrag-cucumber-cloud-feature.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1008
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'bidrag-cucumber-cloud-feature.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to bidrag-cucumber-cloud.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1007 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'bidrag-cucumber-cloud.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to bidrag-cucumber-cloud.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1007
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'bidrag-cucumber-cloud.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to communitylogout.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1028 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'communitylogout.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to communitylogout.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1028
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'communitylogout.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to crypt.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1020 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'crypt.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to crypt.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1020
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'crypt.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to dekoratoren.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1019 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'dekoratoren.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to dekoratoren.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1019
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'dekoratoren.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to designsystemet-figma-slack-app.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1024 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'designsystemet-figma-slack-app.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to designsystemet-figma-slack-app.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1024
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'designsystemet-figma-slack-app.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to digisos.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1013 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'digisos.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to digisos.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1013
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'digisos.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to digitalstatus.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1012 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'digitalstatus.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to digitalstatus.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1012
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'digitalstatus.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to dolly.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1011 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'dolly.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to dolly.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1011
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'dolly.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to eures-cv-eksport.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1002 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'eures-cv-eksport.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to eures-cv-eksport.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1002
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'eures-cv-eksport.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to eures-eksport.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1001 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'eures-eksport.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to eures-eksport.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1001
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'eures-eksport.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to familie-ba-skatteetaten-api.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1015 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'familie-ba-skatteetaten-api.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to familie-ba-skatteetaten-api.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1015
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'familie-ba-skatteetaten-api.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to foreldrepengesoknad.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1004 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'foreldrepengesoknad.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to foreldrepengesoknad.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1004
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'foreldrepengesoknad.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to formio-api-server.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1027 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'formio-api-server.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to formio-api-server.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1027
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'formio-api-server.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to hops-test-e2e.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1014 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'hops-test-e2e.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to hops-test-e2e.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1014
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'hops-test-e2e.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to linkmobility.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1021 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'linkmobility.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to linkmobility.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1021
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'linkmobility.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to nada.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1025 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.path.contains('/api/story') && request.headers['Host'] == 'nada.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to nada.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1025
+
+          + match {
+
+              + expr {
+                  + expression = "request.path.contains('/api/story') && request.headers['Host'] == 'nada.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to pensjon-selvbetjening-soknad-alder-frontend.ekstern.dev.nav.no for nav wifi and naisdevice" -> null
+          - preview     = false -> null
+          - priority    = 1032 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'pensjon-selvbetjening-soknad-alder-frontend.ekstern.dev.nav.no' && (inIpRange(origin.ip, '155.55.51.0/24') || inIpRange(origin.ip, '35.228.13.74/32'))" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to pensjon-selvbetjening-soknad-alder-frontend.ekstern.dev.nav.no for nav wifi and naisdevice"
+          + preview     = false
+          + priority    = 1032
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'pensjon-selvbetjening-soknad-alder-frontend.ekstern.dev.nav.no' && (inIpRange(origin.ip, '155.55.51.0/24') || inIpRange(origin.ip, '35.228.13.74/32'))"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to saas-proxy.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1034 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'saas-proxy.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to saas-proxy.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1034
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'saas-proxy.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to sf-brukernotifikasjon-v2.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1029 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'sf-brukernotifikasjon-v2.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to sf-brukernotifikasjon-v2.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1029
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'sf-brukernotifikasjon-v2.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to skjemabygging-formio.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1023 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'skjemabygging-formio.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to skjemabygging-formio.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1023
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'skjemabygging-formio.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to skjemadelingslenke.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1033 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'skjemadelingslenke.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to skjemadelingslenke.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1033
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'skjemadelingslenke.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to skjemaforhandsvisning.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1022 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'skjemaforhandsvisning.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to skjemaforhandsvisning.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1022
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'skjemaforhandsvisning.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to sof.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1009 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'sof.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to sof.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1009
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'sof.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to soknadsveiviser.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1026 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'soknadsveiviser.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to soknadsveiviser.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1026
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'soknadsveiviser.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to tms-event-api.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1031 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'tms-event-api.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to tms-event-api.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1031
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'tms-event-api.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow access to veiviserarbeidsgiver.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1018 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'veiviserarbeidsgiver.ekstern.dev.nav.no'" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow access to veiviserarbeidsgiver.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1018
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'veiviserarbeidsgiver.ekstern.dev.nav.no'"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow checkpoint to access testapp-a.ekstern.dev.nav.no" -> null
+          - preview     = false -> null
+          - priority    = 1000 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.headers['Host'] == 'testapp-a.ekstern.dev.nav.no' && (inIpRange(origin.ip, '35.228.61.157/32') || inIpRange(origin.ip, '35.228.76.138/32'))" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow checkpoint to access testapp-a.ekstern.dev.nav.no"
+          + preview     = false
+          + priority    = 1000
+
+          + match {
+
+              + expr {
+                  + expression = "request.headers['Host'] == 'testapp-a.ekstern.dev.nav.no' && (inIpRange(origin.ip, '35.228.61.157/32') || inIpRange(origin.ip, '35.228.76.138/32'))"
+                }
+            }
+        }
+      - rule {
+          - action      = "allow" -> null
+          - description = "allow naisdevice" -> null
+          - preview     = false -> null
+          - priority    = 1005 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "inIpRange(origin.ip, '35.228.13.74/32')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "allow"
+          + description = "allow naisdevice"
+          + preview     = false
+          + priority    = 1005
+
+          + match {
+
+              + expr {
+                  + expression = "inIpRange(origin.ip, '35.228.13.74/32')"
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "deny matches for evaluatePreconfiguredExpr('cve-canary'), sensitivity level 1" -> null
+          - preview     = false -> null
+          - priority    = 200 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('cve-canary', ['owasp-crs-v030001-id244228-cve'])" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('lfi-stable')" -> null
+          - preview     = true -> null
+          - priority    = 102 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('lfi-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('methodenforcement-canary')" -> null
+          - preview     = true -> null
+          - priority    = 105 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('methodenforcement-canary')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('php-stable')" -> null
+          - preview     = true -> null
+          - priority    = 108 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('php-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('protocolattack-stable')" -> null
+          - preview     = true -> null
+          - priority    = 107 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('protocolattack-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('rce-stable')" -> null
+          - preview     = true -> null
+          - priority    = 104 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('rce-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('rfi-stable')" -> null
+          - preview     = true -> null
+          - priority    = 103 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('rfi-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('scannerdetection-stable')" -> null
+          - preview     = true -> null
+          - priority    = 106 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('scannerdetection-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('sqli-stable')" -> null
+          - preview     = true -> null
+          - priority    = 100 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('sqli-stable')" -> null
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(403)" -> null
+          - description = "preview for evaluatePreconfiguredExpr('xss-stable')" -> null
+          - preview     = true -> null
+          - priority    = 101 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "evaluatePreconfiguredExpr('xss-stable')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('cve-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 110
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('cve-canary', '[owasp-crs-v030001-id244228-cve, owasp-crs-v030001-id344228-cve]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('lfi-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 104
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('lfi-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('methodenforcement-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 106
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('methodenforcement-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('php-stable'), level description: '1 with L2 owasp-crs-v030001-id933151-php'"
+          + preview     = false
+          + priority    = 111
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('php-stable', '[owasp-crs-v030001-id933131-php, owasp-crs-v030001-id933161-php, owasp-crs-v030001-id933111-php]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('protocolattack-stable'), level description: '1 with L2 owasp-crs-v030001-id921170'"
+          + preview     = false
+          + priority    = 108
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('protocolattack-stable', '[owasp-crs-v030001-id921170-protocolattack]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('rce-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 105
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('rce-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('rfi-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 103
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('rfi-stable', '[owasp-crs-v030001-id931130-rfi]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('scannerdetection-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 107
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('scannerdetection-stable', '[owasp-crs-v030001-id913101-scannerdetection, owasp-crs-v030001-id913102-scannerdetection]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('sessionfixation-canary'), level description: '1'"
+          + preview     = false
+          + priority    = 109
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('sessionfixation-canary')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('sqli-stable'), level description: '1: with some adjustments according to services blocked and scanning of vulnerability'"
+          + preview     = false
+          + priority    = 100
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('sqli-stable', '[owasp-crs-v030001-id942120-sqli, owasp-crs-v030001-id942150-sqli, owasp-crs-v030001-id942180-sqli, owasp-crs-v030001-id942200-sqli, owasp-crs-v030001-id942210-sqli, owasp-crs-v030001-id942260-sqli, owasp-crs-v030001-id942300-sqli, owasp-crs-v030001-id942330-sqli, owasp-crs-v030001-id942340-sqli, owasp-crs-v030001-id942390-sqli, owasp-crs-v030001-id942410-sqli, owasp-crs-v030001-id942430-sqli, owasp-crs-v030001-id942450-sqli, owasp-crs-v030001-id942251-sqli, owasp-crs-v030001-id942420-sqli, owasp-crs-v030001-id942431-sqli, owasp-crs-v030001-id942460-sqli, owasp-crs-v030001-id942421-sqli, owasp-crs-v030001-id942432-sqli, owasp-crs-v030001-id942220-sqli, owasp-crs-v030001-id942160-sqli, owasp-crs-v030001-id942140-sqli, owasp-crs-v030001-id942190-sqli]')"
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(403)"
+          + description = "preview is set to: 'false' for evaluatePreconfiguredExpr('xss-stable'), level description: '1'"
+          + preview     = false
+          + priority    = 101
+
+          + match {
+
+              + expr {
+                  + expression = "evaluatePreconfiguredExpr('xss-stable', '[owasp-crs-v030001-id941150-xss, owasp-crs-v030001-id941320-xss, owasp-crs-v030001-id941330-xss, owasp-crs-v030001-id941340-xss]')"
+                }
+            }
+        }
+        rule {
+            action      = "deny(404)"
+            description = "default rule"
+            preview     = false
+            priority    = 2147483647
+
+            match {
+                versioned_expr = "SRC_IPS_V1"
+
+                config {
+                    src_ip_ranges = [
+                        "*",
+                    ]
+                }
+            }
+        }
+      - rule {
+          - action      = "deny(404)" -> null
+          - description = "deny requests for application URIs for internal use" -> null
+          - preview     = false -> null
+          - priority    = 900 -> null
+
+          - match {
+
+              - expr {
+                  - expression = "request.path.contains('/internal') || request.path.contains('/actuator') || request.path.contains('/metrics')" -> null
+                }
+            }
+        }
+      + rule {
+          + action      = "deny(404)"
+          + description = "deny requests for application URIs for internal use"
+          + preview     = false
+          + priority    = 900
+
+          + match {
+
+              + expr {
+                  + expression = "request.path.contains('/internal') || request.path.contains('/actuator') || request.path.contains('/metrics')"
+                }
+            }
+        }
+    }
+
+Plan: 0 to add, 6 to change, 0 to destroy.
