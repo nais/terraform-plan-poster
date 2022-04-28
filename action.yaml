@@ -1,0 +1,15 @@
+name: 'terraform-plan-poster'
+description: 'Formats and posts a terraform plan on a pull request'
+inputs:
+  github-token:
+    required: true
+    type: secure
+  plan-file:
+    description: 'terraform plan (text)'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - --plan-file=${{ inputs.plan-file }}
+    - --github-token=${{ inputs.github-token }}
