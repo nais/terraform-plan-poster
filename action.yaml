@@ -7,9 +7,12 @@ inputs:
   plan-file:
     description: 'terraform plan (text)'
     required: true
+  pull-request-number:
+    description: 'pull request number'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - --plan-file=${{ inputs.plan-file }}
-    - --pull-request-number=${{ github.event.issue.number }}
+    - --pull-request-number=${{ inputs.pull-request-number }}
