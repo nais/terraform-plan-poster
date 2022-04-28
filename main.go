@@ -2,58 +2,117 @@ package main
 
 import (
 	"bufio"
+	"context"
+	"flag"
 	"fmt"
+	"io"
 	"log"
 	"os"
 	"regexp"
+	"strings"
+
+	"github.com/google/go-github/v43/github"
+	"golang.org/x/oauth2"
 )
+
+type Plan struct {
+	changes map[string]*ResourceChange
+	summary string
+}
 
 type ResourceChange struct {
 	action  string
 	details string
 }
 
-func main() {
-	segmentPattern := regexp.MustCompile(`^.*# (.*) will be (.*)$`)
-	endPattern := regexp.MustCompile(`Plan: (\d+) to add, (\d+) to change, (\d+) to destroy.`)
+var (
+	segmentPattern *regexp.Regexp = regexp.MustCompile(`^.*# (.*) will be (.*)$`)
+	endPattern     *regexp.Regexp = regexp.MustCompile(`Plan: (\d+) to add, (\d+) to change, (\d+) to destroy.`)
 
+	planFile          string
+	pullRequestNumber int
+)
+
+func init() {
+	flag.StringVar(&planFile, "plan-file", "", "Plan file")
+	flag.IntVar(&pullRequestNumber, "pull-request-number", -1, "Pull Request number")
+}
+
+func main() {
+	flag.Parse()
+
+	githubToken := os.Getenv("GITHUB_TOKEN")
+	githubRepo := strings.SplitN(os.Getenv("GITHUB_REPOSITORY"), "/", 2)
+	owner, repo := githubRepo[0], githubRepo[1]
+
+	ctx := context.Background()
+	githubClient := setupGitHubClient(ctx, githubToken)
+	pullRequestsComments, _, err := githubClient.PullRequests.ListComments(ctx, owner, repo, pullRequestNumber, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+	for _, comment := range pullRequestsComments {
+		fmt.Printf("comment: %+v:", comment)
+	}
+
+	plan, err := formatPlan(os.Stdin)
+	if err != nil {
+		log.Fatalf("format plan: %v", err)
+	}
+
+	fmt.Println(plan.summary)
+	for address, change := range plan.changes {
+		title := fmt.Sprintf("%s will be <strong>%s</strong>", address, change.action)
+		fmt.Println(wrap(title, code(change.details)))
+	}
+}
+
+func setupGitHubClient(ctx context.Context, token string) *github.Client {
+	ts := oauth2.StaticTokenSource(
+		&oauth2.Token{AccessToken: token},
+	)
+	tc := oauth2.NewClient(ctx, ts)
+
+	return github.NewClient(tc)
+}
+
+func formatPlan(in io.Reader) (*Plan, error) {
 	changes := make(map[string]*ResourceChange)
-	address := ""
-	var end [][]byte
-	scanner := bufio.NewScanner(os.Stdin)
+	resourceAddress := ""
+	var planSummary [][]byte
+
+	scanner := bufio.NewScanner(in)
 	for scanner.Scan() {
 		line := scanner.Bytes()
-		end = endPattern.FindSubmatch(line)
-		if end != nil {
-			if len(end) != 4 {
-				log.Fatalf("invalid segment separator: %s", line)
+
+		planSummary = endPattern.FindSubmatch(line)
+		if planSummary != nil {
+			if len(planSummary) != 4 {
+				return nil, fmt.Errorf("invalid plan summary: %s", line)
 			}
 			break
 		}
-		segment := segmentPattern.FindSubmatch(line)
 
-		// means we've found a separator
-		//  # google_compute_security_policy.policy["gw-ekstern-dev-nav-no"] will be updated in-place
+		segment := segmentPattern.FindSubmatch(line)
 		if segment != nil {
 			if len(segment) != 3 {
-				log.Fatalf("invalid segment separator: %s", line)
+				return nil, fmt.Errorf("invalid segment separator: %s", line)
 			}
-			address = string(segment[1])
-			changes[address] = &ResourceChange{
+			resourceAddress = string(segment[1])
+			changes[resourceAddress] = &ResourceChange{
 				action: string(segment[2]),
 			}
 		}
 
-		if address != "" {
-			changes[address].details += fmt.Sprintf("%s\n", line)
+		if resourceAddress != "" {
+			changes[resourceAddress].details += fmt.Sprintf("%s\n", line)
 		}
 	}
 
-	fmt.Println(string(end[0]))
-	for address, change := range changes {
-		title := fmt.Sprintf("%s will be <strong>%s</strong>", address, change.action)
-		fmt.Println(wrap(title, code(change.details)))
-	}
+	return &Plan{
+		changes: changes,
+		summary: string(planSummary[1]),
+	}, nil
 }
 
 func wrap(title, details string) string {
