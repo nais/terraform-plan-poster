@@ -12,4 +12,4 @@ runs:
   image: 'Dockerfile'
   args:
     - --plan-file=${{ inputs.plan-file }}
-    - --github-token=${{ inputs.github-token }}
+    - --pull-request-number=${{ github.event.issue.number }}
