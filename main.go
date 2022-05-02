@@ -75,13 +75,12 @@ func main() {
 		body.WriteString(wrap(title, code(change.details)))
 	}
 	bodyString := body.String()
-	//prc := github.PullRequestComment{
-	//	Body:      &bodyString,
-	//	InReplyTo: int64(1),
-	//}
-	_, _, err = githubClient.PullRequests.CreateCommentInReplyTo(ctx, owner, repo, pullRequestNumber, bodyString, int64(1))
+	comment := github.IssueComment{
+		Body: &bodyString,
+	}
+	_, _, err = githubClient.Issues.CreateComment(ctx, owner, repo, pullRequestNumber, &comment)
 	if err != nil {
-		log.Fatal("could not create comment on pr", err)
+		log.Fatal("could not create comment on pr: ", err)
 	}
 }
 
