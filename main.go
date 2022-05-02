@@ -43,11 +43,15 @@ func init() {
 func main() {
 	flag.Parse()
 
+	if len(githubToken) == 0 {
+		log.Fatal("invalid github token")
+	}
+
 	githubRepo := strings.SplitN(os.Getenv("GITHUB_REPOSITORY"), "/", 2)
 	owner, repo := githubRepo[0], githubRepo[1]
 
 	ctx := context.Background()
-	fmt.Printf("Token %d\n", len(githubToken))
+	log.Printf("Token %d\n", len(githubToken))
 	githubClient := setupGitHubClient(ctx, githubToken)
 	pullRequestsComments, _, err := githubClient.PullRequests.ListComments(ctx, owner, repo, pullRequestNumber, nil)
 	if err != nil {
@@ -70,9 +74,6 @@ func main() {
 }
 
 func setupGitHubClient(ctx context.Context, token string) *github.Client {
-	if len(token) == 0 {
-		log.Fatal("Too short")
-	}
 	ts := oauth2.StaticTokenSource(
 		&oauth2.Token{AccessToken: token},
 	)
