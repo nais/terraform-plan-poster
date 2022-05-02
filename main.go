@@ -30,22 +30,28 @@ var (
 	endPattern     *regexp.Regexp = regexp.MustCompile(`Plan: (\d+) to add, (\d+) to change, (\d+) to destroy.`)
 
 	planFile          string
+	githubToken       string
 	pullRequestNumber int
 )
 
 func init() {
 	flag.StringVar(&planFile, "plan-file", "", "Plan file")
+	flag.StringVar(&githubToken, "github-token", "", "Github token")
 	flag.IntVar(&pullRequestNumber, "pull-request-number", -1, "Pull Request number")
 }
 
 func main() {
 	flag.Parse()
 
-	githubToken := os.Getenv("GITHUB_TOKEN")
+	if len(githubToken) == 0 {
+		log.Fatal("invalid github token")
+	}
+
 	githubRepo := strings.SplitN(os.Getenv("GITHUB_REPOSITORY"), "/", 2)
 	owner, repo := githubRepo[0], githubRepo[1]
 
 	ctx := context.Background()
+	log.Printf("Token %d\n", len(githubToken))
 	githubClient := setupGitHubClient(ctx, githubToken)
 	pullRequestsComments, _, err := githubClient.PullRequests.ListComments(ctx, owner, repo, pullRequestNumber, nil)
 	if err != nil {
