@@ -41,7 +41,7 @@ func init() {
 func main() {
 	flag.Parse()
 
-	githubToken := os.Getenv("GITHUB_TOKEN")
+	githubToken := os.Getenv("INPUT_GITHUB-TOKEN")
 	githubRepo := strings.SplitN(os.Getenv("GITHUB_REPOSITORY"), "/", 2)
 	owner, repo := githubRepo[0], githubRepo[1]
 
