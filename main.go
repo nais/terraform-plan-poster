@@ -70,6 +70,9 @@ func main() {
 }
 
 func setupGitHubClient(ctx context.Context, token string) *github.Client {
+	if len(token) == 0 {
+		log.Fatal("Too short")
+	}
 	ts := oauth2.StaticTokenSource(
 		&oauth2.Token{AccessToken: token},
 	)
