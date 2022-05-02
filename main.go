@@ -47,6 +47,7 @@ func main() {
 	owner, repo := githubRepo[0], githubRepo[1]
 
 	ctx := context.Background()
+	fmt.Printf("Token %d\n", len(githubToken))
 	githubClient := setupGitHubClient(ctx, githubToken)
 	pullRequestsComments, _, err := githubClient.PullRequests.ListComments(ctx, owner, repo, pullRequestNumber, nil)
 	if err != nil {
