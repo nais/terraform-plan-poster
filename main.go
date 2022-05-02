@@ -60,8 +60,11 @@ func main() {
 	for _, comment := range pullRequestsComments {
 		fmt.Printf("comment: %+v:", comment)
 	}
-
-	plan, err := formatPlan(os.Stdin)
+	file, err := os.Open(planFile)
+	if err != nil {
+		log.Fatal("could not open file", err)
+	}
+	plan, err := formatPlan(file)
 	if err != nil {
 		log.Fatalf("format plan: %v", err)
 	}
@@ -117,7 +120,7 @@ func formatPlan(in io.Reader) (*Plan, error) {
 
 	return &Plan{
 		changes: changes,
-		summary: string(planSummary[1]),
+		summary: string(planSummary[0]),
 	}, nil
 }
 
