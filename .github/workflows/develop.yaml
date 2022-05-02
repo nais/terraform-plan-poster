@@ -11,4 +11,4 @@ jobs:
         with:
           plan-file: .github/workflows/plan.text
           github-token: $GITHUB_TOKEN
-          pull-request-number: ${{ github.event.issue.number }}
+          pull-request-number: ${{ github.event.pull_request.number }}
