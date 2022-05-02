@@ -16,3 +16,4 @@ runs:
   args:
     - --plan-file=${{ inputs.plan-file }}
     - --pull-request-number=${{ inputs.pull-request-number }}
+    - --github-token=${{ inputs.github-token }}
