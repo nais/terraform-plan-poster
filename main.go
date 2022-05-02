@@ -18,6 +18,9 @@ import (
 type Plan struct {
 	changes map[string]*ResourceChange
 	summary string
+	add     string
+	change  string
+	destroy string
 }
 
 type ResourceChange struct {
@@ -63,7 +66,7 @@ func main() {
 	if err != nil {
 		log.Fatal("could not open file", err)
 	}
-	plan, err := formatPlan(file)
+	plan, err := parsePlan(file)
 	if err != nil {
 		log.Fatalf("format plan: %v", err)
 	}
@@ -82,6 +85,10 @@ func main() {
 	if err != nil {
 		log.Fatal("could not create comment on pr: ", err)
 	}
+
+	fmt.Printf("::set-output name=add::%s\n", plan.add)
+	fmt.Printf("::set-output name=change::%s\n", plan.change)
+	fmt.Printf("::set-output name=destroy::%s\n", plan.destroy)
 }
 
 func setupGitHubClient(ctx context.Context, token string) *github.Client {
@@ -93,31 +100,28 @@ func setupGitHubClient(ctx context.Context, token string) *github.Client {
 	return github.NewClient(tc)
 }
 
-func formatPlan(in io.Reader) (*Plan, error) {
+func parsePlan(in io.Reader) (*Plan, error) {
 	changes := make(map[string]*ResourceChange)
 	resourceAddress := ""
-	var planSummary [][]byte
+	var planSummary []string
 
 	scanner := bufio.NewScanner(in)
 	for scanner.Scan() {
-		line := scanner.Bytes()
+		line := scanner.Text()
 
-		planSummary = endPattern.FindSubmatch(line)
+		planSummary = endPattern.FindStringSubmatch(line)
 		if planSummary != nil {
-			if len(planSummary) != 4 {
-				return nil, fmt.Errorf("invalid plan summary: %s", line)
-			}
 			break
 		}
 
-		segment := segmentPattern.FindSubmatch(line)
+		segment := segmentPattern.FindStringSubmatch(line)
 		if segment != nil {
 			if len(segment) != 3 {
 				return nil, fmt.Errorf("invalid segment separator: %s", line)
 			}
-			resourceAddress = string(segment[1])
+			resourceAddress = segment[1]
 			changes[resourceAddress] = &ResourceChange{
-				action: string(segment[2]),
+				action: segment[2],
 			}
 		}
 
@@ -126,9 +130,16 @@ func formatPlan(in io.Reader) (*Plan, error) {
 		}
 	}
 
+	if len(planSummary) != 4 {
+		return nil, fmt.Errorf("invalid plan summary: %s", planSummary)
+	}
+
 	return &Plan{
 		changes: changes,
-		summary: string(planSummary[0]),
+		summary: planSummary[0],
+		add:     planSummary[1],
+		change:  planSummary[2],
+		destroy: planSummary[3],
 	}, nil
 }
 

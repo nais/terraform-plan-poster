@@ -17,3 +17,10 @@ runs:
     - --plan-file=${{ inputs.plan-file }}
     - --pull-request-number=${{ inputs.pull-request-number }}
     - --github-token=${{ inputs.github-token }}
+outputs:
+  add:
+    description: 'Number of resources to add'
+  change:
+    description: 'Number of resources to change'
+  destroy:
+    description: 'Number of resources to destroy'
