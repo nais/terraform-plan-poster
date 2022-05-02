@@ -51,7 +51,6 @@ func main() {
 	owner, repo := githubRepo[0], githubRepo[1]
 
 	ctx := context.Background()
-	log.Printf("Token %d\n", len(githubToken))
 	githubClient := setupGitHubClient(ctx, githubToken)
 	pullRequestsComments, _, err := githubClient.PullRequests.ListComments(ctx, owner, repo, pullRequestNumber, nil)
 	if err != nil {
@@ -69,10 +68,20 @@ func main() {
 		log.Fatalf("format plan: %v", err)
 	}
 
-	fmt.Println(plan.summary)
+	body := strings.Builder{}
+	body.WriteString(plan.summary)
 	for address, change := range plan.changes {
 		title := fmt.Sprintf("%s will be <strong>%s</strong>", address, change.action)
-		fmt.Println(wrap(title, code(change.details)))
+		body.WriteString(wrap(title, code(change.details)))
+	}
+	bodyString := body.String()
+	//prc := github.PullRequestComment{
+	//	Body:      &bodyString,
+	//	InReplyTo: int64(1),
+	//}
+	_, _, err = githubClient.PullRequests.CreateCommentInReplyTo(ctx, owner, repo, pullRequestNumber, bodyString, int64(1))
+	if err != nil {
+		log.Fatal("could not create comment on pr", err)
 	}
 }
 
