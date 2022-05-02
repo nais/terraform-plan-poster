@@ -48,6 +48,7 @@ func main() {
 	}
 
 	githubRepo := strings.SplitN(os.Getenv("GITHUB_REPOSITORY"), "/", 2)
+	log.Printf("Repo: %s", githubRepo)
 	owner, repo := githubRepo[0], githubRepo[1]
 
 	ctx := context.Background()
