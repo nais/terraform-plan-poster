@@ -129,11 +129,13 @@ func parsePlan(in io.Reader) (*Plan, error) {
 			changes[resourceAddress].details += fmt.Sprintf("%s\n", line)
 		}
 	}
+	log.Println("Changes: ", len(changes))
 
 	if len(planSummary) != 4 {
 		return nil, fmt.Errorf("invalid plan summary: %s", planSummary)
 	}
 
+	log.Printf("summary: %v", planSummary)
 	return &Plan{
 		changes: changes,
 		summary: planSummary[0],
